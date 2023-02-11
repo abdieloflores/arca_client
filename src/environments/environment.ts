@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+    production: false,
+    appName: 'Arca Proyect',
+    appUrl: 'http://localhost:4200',
+    serverUrl: 'http://localhost:8080',
+    apiUrl: 'http://localhost:8080',
 };
 
 /*
