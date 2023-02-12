@@ -3,7 +3,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { CookieService } from 'ngx-cookie-service';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { AppLayoutModule } from './layout/app.layout.module';
+import { AppLayoutModule } from './modules/app.layout.module';
 import { NotfoundComponent } from './shared/components/notfound/notfound.component';
 import { ProductService } from './shared/services/demo_services/product.service';
 import { CountryService } from './shared/services/demo_services/country.service';

@@ -1,14 +1,21 @@
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { NotfoundComponent } from './shared/components/notfound/notfound.component';
-import { AppLayoutComponent } from './layout/app.layout.component';
+import { AppLayoutComponent } from './modules/app.layout.component';
 
 @NgModule({
     imports: [
         RouterModule.forRoot(
             [
                 {
-                    path: '',
+                    path: 'auth',
+                    loadChildren: () =>
+                        import('./modules/auth/auth.module').then(
+                            (m) => m.AuthModule
+                        ),
+                },
+                {
+                    path: 'dashboard',
                     component: AppLayoutComponent,
                     children: [
                         {
@@ -56,18 +63,11 @@ import { AppLayoutComponent } from './layout/app.layout.component';
                     ],
                 },
                 {
-                    path: 'auth',
-                    loadChildren: () =>
-                        import('./shared/components/auth/auth.module').then(
-                            (m) => m.AuthModule
-                        ),
-                },
-                {
                     path: 'landing',
                     loadChildren: () =>
-                        import('./shared/components/landing/landing.module').then(
-                            (m) => m.LandingModule
-                        ),
+                        import(
+                            './shared/components/landing/landing.module'
+                        ).then((m) => m.LandingModule),
                 },
                 { path: 'notfound', component: NotfoundComponent },
                 { path: '**', redirectTo: '/notfound' },
