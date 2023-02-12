@@ -2,7 +2,7 @@
     <a class="layout-topbar-logo" routerLink="">
         <img src="assets/layout/images/{{layoutService.config.colorScheme === 'light' ? 'logo-dark' : 'logo-white'}}.svg"
             alt="logo">
-        <span>SAKAI</span>
+        <span>ARCA PROYECT</span>
     </a>
 
     <button #menubutton class="p-link layout-menu-button layout-topbar-button" (click)="layoutService.onMenuToggle()">
@@ -16,17 +16,21 @@
 
     <div #topbarmenu class="layout-topbar-menu"
         [ngClass]="{'layout-topbar-menu-mobile-active': layoutService.state.profileSidebarVisible}">
+        <button class="p-link layout-topbar-button" (click)="toogleTheme()">
+            <i class="pi pi-{{compareColorScheme('dark')?'sun':'moon'}}"></i>
+            <span>Modo {{compareColorScheme('dark')?'claro':'obscuro'}}</span>
+        </button>
         <button class="p-link layout-topbar-button">
             <i class="pi pi-calendar"></i>
-            <span>Calendar</span>
+            <span>Calendario</span>
         </button>
         <button class="p-link layout-topbar-button">
             <i class="pi pi-user"></i>
-            <span>Profile</span>
+            <span>Perfil</span>
         </button>
         <button class="p-link layout-topbar-button" [routerLink]="'/documentation'">
             <i class="pi pi-cog"></i>
-            <span>Settings</span>
+            <span>Configuraciones</span>
         </button>
     </div>
 </div>
