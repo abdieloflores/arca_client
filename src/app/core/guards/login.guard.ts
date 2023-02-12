@@ -4,10 +4,8 @@ import {
     CanActivate,
     Router,
     RouterStateSnapshot,
-    UrlTree,
 } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
-import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root',

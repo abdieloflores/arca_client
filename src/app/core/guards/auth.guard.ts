@@ -3,9 +3,7 @@ import {
     ActivatedRouteSnapshot,
     CanActivate,
     RouterStateSnapshot,
-    UrlTree,
 } from '@angular/router';
-import { Observable } from 'rxjs';
 import { AuthService } from '../../shared/services/auth.service';
 import { Router } from '@angular/router';
 

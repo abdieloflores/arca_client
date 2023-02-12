@@ -5,6 +5,16 @@ import { RouterModule } from '@angular/router';
     imports: [
         RouterModule.forChild([
             {
+                path: '',
+                pathMatch: 'full',
+                redirectTo: 'login',
+            },
+            {
+                path: 'login',
+                loadChildren: () =>
+                    import('./login/login.module').then((m) => m.LoginModule),
+            },
+            {
                 path: 'error',
                 loadChildren: () =>
                     import('./error/error.module').then((m) => m.ErrorModule),
@@ -16,12 +26,6 @@ import { RouterModule } from '@angular/router';
                         (m) => m.AccessModule
                     ),
             },
-            {
-                path: 'login',
-                loadChildren: () =>
-                    import('./login/login.module').then((m) => m.LoginModule),
-            },
-            { path: '**', redirectTo: '/notfound' },
         ]),
     ],
     exports: [RouterModule],
